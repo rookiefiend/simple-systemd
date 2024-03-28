@@ -1,0 +1,9 @@
+name: noVNC # 服务名, 服务的唯一标识
+description: start noVNC server for http access # 描述信息
+execStart: # 启动命令
+  - /usr/bin/ls
+  - -l
+  - -a
+restartSec: 5 # 重启时间间隔
+depends: # 依赖服务列表, 将以特定时间间隔不断重试
+  - TigerVNC
