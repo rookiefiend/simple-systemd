@@ -4,13 +4,6 @@
 
 # Guide
 
-## Install
-
-```bash
-# 在根目录下生成 build 目录, 并在其下生成各二进制
-make build
-```
-
 ## Usage
 
 可通过`-h`命令查看使用说明
@@ -26,8 +19,30 @@ Usage of ./build/simple-systemd:
 
 # Developer
 
-## Compile
+## Requirements
+
+- docker
+
+使用 `make` 指令编译的产物默认在 ./build 目录下
+
+## build
+
+使用本机Go环境编译程序
 
 ```bash
+# amd64 架构
 make build
+# arm64 架构
+make build GOARCH=arm64
+```
+
+## docker-build
+
+使用容器化的GO环境编译程序
+
+```bash
+# amd64 架构
+make docker-build
+# arm64 架构
+make docker-build GOARCH=arm64
 ```
